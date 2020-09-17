@@ -1,0 +1,25 @@
+# Taken from Cobalt2 VSCode theme
+font-family: Menlo
+font-size: 10
+textColor: #FFFFFF
+backgroundColor: #122738
+selectBackground: #0050A4
+selectForeground: #aaa
+ansiBlack: #000000
+ansiRed: #ff628c
+ansiGreen: #3ad900
+ansiYellow: #ffc600
+ansiBlue: #0088ff
+ansiMagenta: #fb94ff
+ansiCyan: #80fcff
+ansiWhite: #ffffff
+ansiBrightBlack: #0050A4
+ansiBrightRed: #ff628c
+ansiBrightGreen: #3ad900
+ansiBrightYellow: #ffc600
+ansiBrightBlue: #0088ff
+ansiBrightMagenta: #fb94ff
+ansiBrightCyan: #80fcff
+ansiBrightWhite: #193549
+cursorBackground: #ffc600
+cursorForeground: #ffc600
