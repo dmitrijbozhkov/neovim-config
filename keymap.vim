@@ -39,7 +39,14 @@ let g:NERDTreeMapCloseDir = 'c'
 " Close children
 let g:NERDTreeCloseChildren = 'X'
 " Fugitive controls
-
+" Open git menu
+noremap <leader>g :G <CR>
+" Init commit
+noremap <leader>c :Gcommit <CR>
+" Push changes
+noremap <leader>w :Gpush <CR>
+" Pull changes
+noremap <leader>s :Gpull <CR>
 " VIM keymaps
 " Create vertical split
 noremap <C-v> :vnew <CR>
