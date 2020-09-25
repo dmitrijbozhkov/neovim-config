@@ -1,0 +1,32 @@
+{
+	"explorer.keyMappings": {
+		"w": "nodePrev",
+		"s": "nodeNext",
+		"<cr>": ["expandable?", "expand", "open"],
+		"t": "open:tab",
+		"v": "open:vsplit",
+		"h": "open:split",
+		"b": "collapse",
+		"B": "collapseRecursive",
+		"p": "cd",
+		"l": "search",
+		"L": "searchRecursive",
+		"e": "copyFile",
+		"E": "copyFilePath",
+		"r": "delete",
+		"R": "deleteForewer",
+		"x": "cutFile",
+		"q": "pasteFile",
+		"f": "addFile",
+		"F": "addDirectory",
+		"n": "rename",
+		"U": "refresh",
+		".": "toggleHidden",
+		"v": "toggleSelection",
+		"z": "gotoParent",
+		"P": "preview",
+		"W": "indentPrev",
+		"S": "indentNext"
+	},
+	"explorer.quitOnOpen": true
+}

@@ -1,43 +1,22 @@
-" Global keyboard settings
+" Global keyboard and text settings
+highlight MatchParen ctermfg=White ctermbg=Green cterm=NONE
+set conceallevel=0
 set mouse=a
 set number
 set relativenumber
-set cursorline
 set ts=4 sw=4
 syntax on
-set ruler
 set smarttab
-" NERDTree mappings
-" Toggle file explorer
-function! NerdTreeToggleFind()
-	if exists("g:NERDTree") && g:NERDTree.IsOpen()
-		NERDTreeClose
-	elseif filereadable(expand('%'))
-		NERDTreeFind
-	else
-		NERDTree
-	endif
-endfunction
-
-nnoremap m :call NerdTreeToggleFind()<CR>
+set list
+set listchars=tab:\→\ ,trail:␣
+" Save current session
+noremap <leader>m :mksession! ./.session.vim <CR>
+" Load session file
+noremap <leader>l :source ./.session.vim <CR>
 " Conda environment change
 noremap <C-n> :CondaChangeEnv
-" Map menu
-let g:NERDTreeMapMenu = 'n'
-" Menu up
-let g:NERDTreeMenuUp = 'w'
-" Menu down
-let g:NERDTreeMenuDown = 's'
-" Open in vsplit
-let g:NERDTreeMapOpenVSplit = 'v'
-" Jump to first sibling
-let g:NERDTreeMapJumpFirstChild = 'q'
-" Jump to last sibling
-let g:NERDTreeMapJumpLastChild = 'a'
-" Close tree
-let g:NERDTreeMapCloseDir = 'c'
-" Close children
-let g:NERDTreeCloseChildren = 'X'
+" coc-explorer controls
+noremap m :CocCommand explorer <CR>
 " Fugitive controls
 " Open git menu
 noremap <leader>g :G <CR>
@@ -48,14 +27,30 @@ noremap <leader>w :Gpush <CR>
 " Pull changes
 noremap <leader>s :Gpull <CR>
 " VIM keymaps
+" Invoke make build command
+noremap <leader>b :make build
+" Invoke make test command
+noremap <leader>t :make test
+" Invoke make clean command
+noremap <leader>r :make clean
+" Invoke make install
+noremap <leader>i :make install
+" Invoke make uninstall
+noremap <leader>u :make uninstall
+" Set current directory the directory of the current file
+noremap <leader>cd :cd %:p:h <CR>
 " Create vertical split
 noremap <C-v> :vnew <CR>
 " Create horizontal split
 noremap <C-h> :new <CR>
 " Close wndow
 noremap <C-q> :q <CR>
+" Close window and discard buffer
+noremap <C-c> :bw <CR>
 " Close and wrte window
 noremap <C-e> :wq <CR>
+" Write buffer
+noremap <C-p> :w <CR>
 " Active window up
 noremap <C-w> :wincmd k <CR>
 " Active window down
@@ -64,12 +59,30 @@ noremap <C-s> :wincmd j <CR>
 noremap <C-a> :wincmd h <CR>
 " Active window right
 noremap <C-d> :wincmd l <CR>
+" Rotate windows downwards/rightwards
+noremap <C-o> :wincmd r <CR>
+" Rotate windows upwards/leftwards
+noremap <C-O> :wincmd R <CR>
+" Equalize all windows
+noremap <C-k> :wincmd = <CR>
+" Magnify current window height
+noremap <C-m>h :wincmd + <CR>
+" Magnify current window width
+noremap <C-m>w :wincmd > <CR>
+" Lessen window height
+noremap <C-l>h :wincmd - <CR>
+" Lessen window width
+noremap <C-l>w :wincmd < <CR>
 " Next tab
 noremap = :tabnext <CR>
 " Previous tab
 noremap - :tabprevious <CR>
 " Create tab
 noremap + :tabnew <CR>
+" Move tab to the right
+noremap <C-x> :tabmove +<bar> <CR>
+" Move tab to the left
+noremap <C-z> :tabmove -<bar> <CR>
 " Center screen
 noremap c zz
 " record typed characters
@@ -96,6 +109,14 @@ noremap k a
 noremap . w
 " word back
 noremap , b
+" Screen down
+noremap n <C-f> <bar> zz
+" Screen up
+noremap h <C-b> <bar> zz
+" Go to the top of the file
+noremap H :1 <CR>
+" Go to the bottom of the file
+noremap N :% <CR>
 " first character in the line
 noremap a 0
 " to the end of the line
