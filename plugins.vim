@@ -8,11 +8,10 @@ Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
-Plug 'mhinz/vim-startify'
 " coc plugins
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
-" coc-explorer coc-css coc-git coc-html coc-java coc-python coc-markdownlint coc-sh coc-texlab coc-tsserver coc-xml coc-yaml
+" coc-explorer coc-css coc-git coc-html coc-java coc-python coc-markdownlint coc-sh coc-texlab coc-tsserver coc-xml coc-yaml coc-snippets
 call plug#end()
 
 let g:tex_flavor = 'latex'

@@ -9,6 +9,8 @@ syntax on
 set smarttab
 set list
 set listchars=tab:\→\ ,trail:␣
+" Escape terminal insert mode
+tnoremap <Esc> <C-\><C-N>
 " Save current session
 noremap <leader>m :mksession! ./.session.vim <CR>
 " Load session file
@@ -27,16 +29,23 @@ noremap <leader>w :Gpush <CR>
 " Pull changes
 noremap <leader>s :Gpull <CR>
 " VIM keymaps
-" Invoke make build command
-noremap <leader>b :make build
-" Invoke make test command
-noremap <leader>t :make test
-" Invoke make clean command
-noremap <leader>r :make clean
-" Invoke make install
-noremap <leader>i :make install
-" Invoke make uninstall
-noremap <leader>u :make uninstall
+" Open terminal in the new window
+function OpenHWindow()
+	:new
+	:terminal
+endfunction
+function OpenVWindow()
+	:vnew
+	:terminal
+endfunction
+noremap <leader>h :exec OpenHWindow() <CR>
+noremap <leader>v :exec OpenVWindow() <CR>
+" Open terminal in the new tab
+function OpenTab()
+	:tabnew
+	:terminal
+endfunction
+noremap <leader>t :exec OpenTab() <CR>
 " Set current directory the directory of the current file
 noremap <leader>cd :cd %:p:h <CR>
 " Create vertical split
